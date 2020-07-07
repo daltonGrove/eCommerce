@@ -1,0 +1,1 @@
+There were a lot of changes to what we made once I talked with David. I pushed all of them at once. Going forward from, 7/7 2:18pm, we should do specific commits.

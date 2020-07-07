@@ -7,36 +7,41 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class AdminRole {
+public class Role {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "adminRole_id")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "role_id")
 	private Long id;
 	private String role;
 	
-	public AdminRole () {}
+	
+	public Role() {}
 
-	public AdminRole(Long id, String role) {
-		this.id = id;
+
+	public Role(String role) {
 		this.role = role;
 	}
+
 
 	public String getRole() {
 		return role;
 	}
 
+
 	public void setRole(String role) {
 		this.role = role;
 	}
+
 
 	public Long getId() {
 		return id;
 	}
 
+
 	@Override
 	public String toString() {
-		return "AdminRole [id=" + id + ", role=" + role + "]";
+		return "Role [id=" + id + ", role=" + role + "]";
 	}
 	
 	
