@@ -33,6 +33,9 @@ public class Product {
 	@NotBlank(message = "Product brand cannot be blank")
 	private String brand;
 	
+	@NotBlank(message = "Product category cannot be blank")
+	private String category;
+	
 	@NotBlank(message = "Product description cannot be blank")
 	private String description;
 	
@@ -51,6 +54,7 @@ public class Product {
 			@PositiveOrZero(message = "Product wholesale price cannot be zero or negative") Double wholesalePrice,
 			@PositiveOrZero(message = "Product wholesale price cannot be zero or negative") Double retailPrice,
 			@NotBlank(message = "Product brand cannot be blank") String brand,
+			@NotBlank(message = "Product category cannot be blank") String category,
 			@NotBlank(message = "Product description cannot be blank") String description,
 			@PositiveOrZero(message = "Inventory cannot be zero") Integer inventory, Date createdAt, Date updatedAt) {
 		this.id = id;
@@ -58,6 +62,7 @@ public class Product {
 		this.wholesalePrice = wholesalePrice;
 		this.retailPrice = retailPrice;
 		this.brand = brand;
+		this.category = category;
 		this.description = description;
 		this.inventory = inventory;
 		this.createdAt = createdAt;
@@ -94,6 +99,14 @@ public class Product {
 
 	public void setBrand(String brand) {
 		this.brand = brand;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getDescription() {
@@ -135,9 +148,10 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", wholesalePrice=" + wholesalePrice + ", retailPrice="
-				+ retailPrice + ", brand=" + brand + ", description=" + description + ", inventory=" + inventory
-				+ ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
+				+ retailPrice + ", brand=" + brand + ", category=" + category + ", description=" + description
+				+ ", inventory=" + inventory + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
 	}
+
 	
 	
 	
