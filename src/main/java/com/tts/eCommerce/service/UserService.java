@@ -17,6 +17,7 @@ import com.tts.eCommerce.repository.UserRepository;
 @Service
 public class UserService {
 
+
 	private UserRepository userRepository;
 	private RoleRepository roleRepository;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -54,4 +55,6 @@ public class UserService {
 	}
 
 	
+
 }
+
