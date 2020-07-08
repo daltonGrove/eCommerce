@@ -45,7 +45,6 @@ public class User {
 	@NotEmpty(message = "Please provide your last name")
 	private String lastName;
 	
-	
 	private Integer active;
 	
 	@CreationTimestamp
