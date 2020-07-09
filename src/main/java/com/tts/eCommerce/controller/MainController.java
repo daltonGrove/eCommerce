@@ -6,18 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.tts.eCommerce.model.Cart;
 import com.tts.eCommerce.model.Product;
 import com.tts.eCommerce.service.ProductService;
 
 @Controller
+@RequestMapping("/storefront")
 public class MainController {
 	
 	@Autowired
 	private ProductService productService;
 	
-	  @GetMapping(value = {"/", "/home"})
+	  @GetMapping(value = {"/", "/index"})
 	  public String home(Model model) {
 	    model.addAttribute("products", productService.findAll());
 	    model.addAttribute("categories", productService.findCategories());
@@ -34,4 +37,16 @@ public class MainController {
 	    model.addAttribute("brands", productService.findBrands());
 	    return "storefront/index";
 	  }
+	  
+	  
+	  //New Cart code on the index page
+	  @GetMapping("/")
+	  public String index(Model model) {
+		  model.addAttribute("cart", new Cart());
+		  return "storefront/index";
+	  }
+	  
+	  
+	  
+	  
 }
