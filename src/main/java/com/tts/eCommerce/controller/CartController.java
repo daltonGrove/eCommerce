@@ -23,5 +23,19 @@ public class CartController {
 		model.addAttribute("cart", cart);
 		return "storefront/cart";
 	}
+	@PostMapping("/storefront/cart")
+		public String addToCart(@RequestParam Long productId, Cart cart, @RequestParam Integer quantity, Model model) {
+		  Cart cart = cartService.addLineItemToCart(cart, productId, quantity);
+		  cart = cartService.addLineItemToCart(cart, productId, quantity);
+		  model.addAttribute("cart", cart);
+		  return "storefront/cart";
+}
+	@PostMapping("/storefront/cart")
+	public String changeCartLineItemQuantity(@RequestParam Long productId, Cart cart, @RequestParam Integer quantity, Model model) {
+		  Cart cart = cartService.updateLineItemQuantity(cart, productId, quantity);
+		  cart = cartService.updateLineItemQuantity(cart, productId, quantity);
+		  model.addAttribute("cart", cart);
+		  return "storefront/cart";
+	}
 
 }
