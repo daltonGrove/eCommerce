@@ -5,10 +5,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 
 import com.tts.eCommerce.model.Cart;
 import com.tts.eCommerce.model.Product;
 
+@Service
 public class CartService {
 	
 	@Autowired
